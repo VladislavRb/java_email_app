@@ -1,5 +1,7 @@
 package main.java;
 
+import email.EmailUtility;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import src.main.java.EmailUtility;
 
 @WebServlet(name = "EmailController", urlPatterns = {"/controller"})
 public class EmailController extends HttpServlet {
