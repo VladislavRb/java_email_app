@@ -42,7 +42,7 @@ public class EmailController extends HttpServlet {
             resultMessage = "There were an error: " + ex.getMessage();
         } finally {
             request.setAttribute("Message", resultMessage);
-            getServletContext().getRequestDispatcher("/Result.jsp").forward(
+            request.getRequestDispatcher("pages/main.jsp").forward(
                     request, response);
         }
     }
