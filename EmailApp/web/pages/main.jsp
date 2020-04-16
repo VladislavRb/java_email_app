@@ -10,6 +10,9 @@
 <body>
 <center>
     <h3><%=request.getAttribute("Message")%></h3>
+    <form action="controller" method="get">
+        <input type="submit" value="Send"/>
+    </form>
 </center>
 </body>
 </html>
