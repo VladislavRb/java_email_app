@@ -1,6 +1,6 @@
 package main.java;
 
-import email.EmailUtility;
+import emailUtils.EmailSender;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -18,7 +18,6 @@ public class EmailController extends HttpServlet {
     private String pass;
 
     public void init() {
-        // reads SMTP server setting from web.xml file
         ServletContext context = getServletContext();
         this.host = context.getInitParameter("host");
         this.port = context.getInitParameter("port");
@@ -34,16 +33,14 @@ public class EmailController extends HttpServlet {
         String resultMessage = "";
 
         try {
-            EmailUtility.sendEmail(host, port, user, pass, recipient, subject,
-                    content);
+            EmailSender.sendEmail(host, port, user, pass, recipient, subject, content);
             resultMessage = "The e-mail was sent successfully";
         } catch (Exception ex) {
             ex.printStackTrace();
             resultMessage = "There were an error: " + ex.getMessage();
         } finally {
             request.setAttribute("Message", resultMessage);
-            request.getRequestDispatcher("pages/main.jsp").forward(
-                    request, response);
+            request.getRequestDispatcher("pages/main.jsp").forward(request, response);
         }
     }
 
