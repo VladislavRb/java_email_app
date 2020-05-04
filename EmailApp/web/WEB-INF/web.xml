@@ -18,11 +18,11 @@
 
 <context-param>
     <param-name>user</param-name>
-    <param-value>vlad.rabashchenko@gmail.com</param-value>
+    <param-value>***</param-value>
 </context-param>
 
 <context-param>
     <param-name>pass</param-name>
-    <param-value>kiroma321</param-value>
+    <param-value>***</param-value>
 </context-param>
 </web-app>
